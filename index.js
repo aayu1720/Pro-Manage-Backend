@@ -27,8 +27,8 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/task", taskRoute);
+app.use("/auth", authRoute);
+app.use("/task", taskRoute);
 
 app.use("*", (req, res) => {
   res.status(404).json({ message: "Route not found" });
